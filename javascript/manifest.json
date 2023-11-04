@@ -1,0 +1,39 @@
+{
+    "name": "Readee",
+    "version": "0.0.1",
+    "description": "visual aid for reading comprehension",
+    "manifest_version": 3,
+    "author": "Sampurna Chapagain",
+    "permissions": [
+        "activeTab",
+        "webNavigation"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "script.js"
+            ],
+            "css": [
+                "style.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "index.html",
+                "style.css",
+                "script.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ],
+            "extension_ids": [
+                "*"
+            ]
+        }
+    ]
+}
