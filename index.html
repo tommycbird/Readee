@@ -1,12 +1,46 @@
 <!-- FILEPATH: /Users/tommycbird/Readee/index.html -->
 
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Chrome Extension</title>
-    <script src="popup.js"></script>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-4 Request Form</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <script src="src/js/gpt.js"></script>
+    <script src="src/js/script.js"></script>
+    <script src="src/js/node.js"></script>
+
+
+
+</head>
+<body>
+    <div class="form-container">
+        <h1>GPT-4 API Request</h1>
+        <form id="gptForm">
+            <div class="input-group">
+                <label for="word">Word:</label>
+                <input type="text" id="word" name="word" required>
+            </div>
+            <div class="input-group">
+                <label for="sentence">Sentence:</label>
+                <input type="text" id="sentence" name="sentence" required>
+            </div>
+            <div class="input-group">
+              <label for="context">Context:</label>
+              <input type="text" id="context" name="context" required>
+          </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        // Attach event listener to form submission
+        document.getElementById('gptForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const word = document.getElementById('word').value;
+            const context = document.getElementById('context').value;
+        });
+    </script>
+</body>
 </html>

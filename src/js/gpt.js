@@ -1,14 +1,32 @@
-function fetchGPT(prompt) {
-    fetch(`${CONFIG.API_ENDPOINT}/askGPT`, {
+
+function fetchDefGPT(keyword, sentence) {
+    fetch(`${"http://localhost:3000"}/askDefGPT`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ prompt: "I am now going to pass in metadata associated with a youtube video. I do not need any information back on this please respond 'ok got it' to this query" + prompt })
+        body: JSON.stringify({ prompt: "Please give me the definition of : " + keyword + ", In the following Context: " + sentence })
     })
     .then(response => response.json())
     .then(data => {
-        console.log('GPT Response:', data.answer);
+        console.log('DEFINITION Response:', data.answer);
+    })
+    .catch(error => {
+        console.error('Error getting response from GPT:', error);
+    });
+}
+
+function checkGPT(keyword, sentence, context) {
+    fetch(`${"http://localhost:3000"}/checkGPT`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ prompt: "Does the usage of the word " + keyword + ", In the sentence: " + sentence  + "make sense given the context catigory of : " + context })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('CHECK Response:', data.answer);
     })
     .catch(error => {
         console.error('Error getting response from GPT:', error);
