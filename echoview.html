@@ -10,12 +10,9 @@
         <link rel="stylesheet" href="src/css/echoview.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
-    <body>
-        <textarea id="txtOutput" placeholder="{ }"></textarea>
-        <div class="input-field">
-            <input id="inputModelViewer" type="text" title="EntryID" placeholder="Enter Entry ID">
-            <button onclick="viewModel($('#inputModelViewer').val());">View Model</button>
+    <body onload="viewModel('test')">
+        <div class="model-box">
+            <model-viewer id="modelViewer" ar  shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
         </div>
-        <model-viewer id="modelViewer" src="https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb" ar environment-image="https://modelviewer.dev/shared-assets/environments/moon_1k.hdr" poster="https://modelviewer.dev/shared-assets/models/NeilArmstrong.webp" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
     </body>
 </html>
