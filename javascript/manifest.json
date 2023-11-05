@@ -6,7 +6,8 @@
     "author": "Sampurna Chapagain",
     "permissions": [
         "activeTab",
-        "webNavigation"
+        "webNavigation",
+        "storage"
     ],
     "content_scripts": [
         {
@@ -26,7 +27,8 @@
             "resources": [
                 "index.html",
                 "style.css",
-                "script.js"
+                "script.js",
+                "3DData.json"
             ],
             "matches": [
                 "<all_urls>"

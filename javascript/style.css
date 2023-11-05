@@ -17,6 +17,7 @@
 .noun-popup-wrapper {
     position: relative;
     display: inline-block;
+    background-color: rgb(223, 196, 226);
 }
 .noun-popup-wrapper .noun-popup {
     display: none;
@@ -27,7 +28,7 @@
 .noun-popup-wrapper .noun-popup::after {
     content: "";
     position: absolute;
-    top: 5%;
+    top: 0%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
@@ -37,7 +38,7 @@
 .noun-popup-wrapper .noun-popup:hover::after {
     content: "";
     position: absolute;
-    top: 5%;
+    top: 0%;
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
@@ -61,7 +62,7 @@
     border: none;
     padding: 8px 0;
     position: absolute;
-    bottom: 95%;
+    bottom: 100%;
     left: 50%;
     margin-left: -80px;
     -webkit-animation: fadeIn 0.5s;
