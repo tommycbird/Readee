@@ -1,14 +1,4 @@
-function injectCSS() {
-    console.log("Injecting CSS");
-    var css = document.createElement("style");
-    css.href = chrome.runtime.getURL("javascript/style.css");
-    css.type = 'text/css';
-    css.rel = 'stylesheet';
-    document.body.appendChild(css);
-}
-
-function injectButton() {
-    // injectCSS();
+function injectButton( allKeys ) {
     console.log("Injecting Buttons");
 
     // injecting noun buttons for britannica
@@ -28,6 +18,10 @@ function injectButton() {
         nounElements.forEach(nounElement => {
             const nounButtonTitle = nounElement.textContent;
             console.log("element: " + nounButtonTitle);
+
+            if (!allKeys.includes(nounButtonTitle.toLowerCase())) {
+                return;
+            }
 
             const nounParentElement = nounElement.parentElement;
             const nounParentContent = nounParentElement.textContent;
@@ -175,4 +169,43 @@ function injectButton() {
     }
 }
 
-injectButton();
+// fetching the list of echo3D models
+async function getJSON() {
+    // making the array to store all the keys
+    let allKeys = [];
+
+    // Use the fetch API to load the JSON file
+    const jsonURL = chrome.runtime.getURL("3DData.json");
+    fetch(jsonURL)
+        .then(response => {
+            // Check if the request was successful
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            // Parse the JSON in the response
+            return response.json();
+        })
+        .then(data => {
+            // Loop through each property in the object
+            for (let id in data) {
+                if (data.hasOwnProperty(id)) {
+                // Concatenate the keys from this entry into the allKeys array
+                allKeys = allKeys.concat(data[id].keys);
+                }
+            }
+
+            // allKeys now contains all the words in "keys"
+            console.log(allKeys); // Output the array to the console
+        }).then(() => {
+            // inject the buttons
+            injectButton(allKeys);
+        })
+        .catch(error => {
+            // If there is any error you will catch them here
+            console.error('There was a problem with the fetch operation:', error);
+        });
+
+    return allKeys;
+}
+
+getJSON();
