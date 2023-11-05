@@ -3,19 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/echoview.css">
     <title>Popup</title>
-    <script defer src="src/js/popup.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://storage.echo3d.com/JS/Echo3DApi.js"></script>
-    <script src="src/js/echo.js"></script>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet'>
 </head>
 <body onload="computeRender()">
-    <button data-modal-target = "#modal">Open Modal</button>
+    <!-- <button data-modal-target = "#modal">Open Modal</button> -->
     <div class="modal" id = "modal">
-        <button data-close-button class="close-button" >&times;</button>
+        <button data-close-button class="close-button" onclick="killPopup()">&times;</button>
         <div class="modal-content">
             <div class="modal-header">
                 <div class="head" class = "text">Arctic Fox</div>

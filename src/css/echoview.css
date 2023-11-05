@@ -133,8 +133,8 @@ button{
 
 /* modal styling */
 .modal {
-    display: none;
-    opacity: 0;
+    display: block;
+    opacity: 1;
     color: white;
     z-index: 10;
     position: fixed;
@@ -158,12 +158,6 @@ button{
     z-index: 10;    
     font-size: 3rem;
 }  
-
-.modal.active {
-    display: block;
-    opacity: 1;  
-    
-}
 
 .modal-header {
     padding: 10px 15px;
@@ -198,7 +192,7 @@ button{
     align-items: center;
 } 
 
- .model-box {
+.model-box {
     width: 100%;
 
 } 
@@ -210,15 +204,9 @@ button{
     left: 0;
     bottom: 0;
     right: 0;
-    opacity: 0;
+    opacity: 1;
     background-color: rgba(0,0,0,0.7);
     transition: 300ms ease-in-out;
     backdrop-filter: blur(2px); 
-    pointer-events: none;
-}
-
-#overlay.active {
     pointer-events: all;
-    opacity: 1;
 }
-

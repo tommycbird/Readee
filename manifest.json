@@ -1,11 +1,12 @@
 {
     "name": "Readee",
-    "version": "0.0.1",
-    "description": "visual aid for reading comprehension",
+    "version": "0.5.3",
+    "description": "A 3D Renderer designed to enhacne reading comprehension.",
     "manifest_version": 3,
-    "author": "Sampurna Chapagain",
+    "author": "Team IHAT",
     "permissions": [
         "activeTab",
+        "scripting",
         "webNavigation",
         "storage"
     ],
@@ -15,20 +16,30 @@
                 "<all_urls>"
             ],
             "js": [
-                "extension/script.js"
+                "extension/script.js",
+                "src/js/echo.js",
+                "src/js/import/jquery.min.js",
+                "src/js/import/Echo3DAPI.js"
             ],
             "css": [
-                "extension/style.css"
+                "extension/style.css",
+                "src/css/echoview.css"
             ]
         }
     ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self';"
+    },
     "web_accessible_resources": [
         {
             "resources": [
                 "extension/index.html",
+                "popup.html",
+                "src/js/popup.js",
                 "extension/style.css",
                 "extension/script.js",
-                "3DData.json"
+                "3DData.json",
+                "src/js/import/model-viewer.min.js"
             ],
             "matches": [
                 "<all_urls>"
