@@ -1,6 +1,6 @@
 
 function fetchDefGPT(keyword, sentence) {
-    fetch(`${"http://localhost:3000"}/askDefGPT`, {
+    fetch(`http://18.218.226.79:3000/askDefGPT`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -17,7 +17,7 @@ function fetchDefGPT(keyword, sentence) {
 }
 
 function checkGPT(keyword, sentence, context) {
-    fetch(`${"http://localhost:3000"}/checkGPT`, {
+    fetch(`http://18.218.226.79:3000/checkGPT`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

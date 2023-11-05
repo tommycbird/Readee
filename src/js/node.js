@@ -6,15 +6,16 @@ const port = 3000;
 const path = require('path');
 
 //API Key for OpenAI
-process.env.OPENAI_API_KEY = 'aaaaaa';
+process.env.OPENAI_API_KEY = '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';
 const openai = new OpenAIApi({ key: process.env.OPENAI_API_KEY });
 
 // Serve static files from the 'Readee' directory
 app.use(express.static(path.join(__dirname, '../../')));
 
 // Middleware for parsing JSON bodies
-app.use(bodyParser.json());
 app.use(cors());
+app.use(express.json());
+
 
 //======================================================================================================================================================
 
@@ -87,7 +88,7 @@ app.post('/askDefGPT', async (req, res) => {
 
 //======================================================================================================================================================
 
-//Method to query the openAI API for word Definitions
+//Method to query the openAI API for checking 
 app.post('/checkGPT', async (req, res) => {
     try {
         console.log("Received request for /checkGPT:", req.body);
