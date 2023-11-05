@@ -13,6 +13,9 @@ script.setAttribute("src", chrome.runtime.getURL('src/js/import/model-viewer.min
 const head = document.head || document.getElementsByTagName("head")[0] || document.documentElement;
 head.insertBefore(script, head.lastChild);
 
+//dictionary mapping nouns to definitions
+const nounDict = new Map();
+
 // inject buttons onto key words
 function injectButton( allKeys, entryIDs ) {
     console.log("Injecting Buttons");
@@ -89,16 +92,26 @@ function injectButton( allKeys, entryIDs ) {
             nounParentElement.replaceChild(popupWrapper, nounElement);
 
             console.log("success");
-            
+
+            //add gpt definition to nounDict
+            getDefinitionAndUseIt(nounButtonTitle, nounSentence);
+
             // Attach event listener to the button
             const modelID = entryIDs.get(nounButtonTitle.toLowerCase());
             // console.log(nounButtonTitle + ": " + modelID);    
             popupButton.addEventListener('click', function() {
                 renderPopup(nounButtonTitle, nounSentence, modelID);
             });
+
+
         });
     }
 
+}
+async function getDefinitionAndUseIt(nounButtonTitle, nounSentence) {
+    const definition = await fetchDefGPT(nounButtonTitle, nounSentence);
+    console.log("definition:", definition); // This should now show the actual definition or null
+    nounDict.set(nounButtonTitle.toLowerCase(), definition);
 }
 
 function killPopup() {
@@ -151,11 +164,13 @@ function renderPopup(key, sentence, entryID) {
 
         // Change the text content
         headerElement.textContent = capitalized(key);
-        const definition = fetchDefGPT(key, sentence);
-        if (definition != null && definition != "") {
-            textElement.textContent = definition;
-        } else {
-            textElement.textContent = "Definition not found...";
+        //set definition from nounDict
+        const defiGPT = nounDict.get(key.toLowerCase());
+        console.log("defiGPT: " + defiGPT);
+        if (defiGPT) {
+            textElement.textContent = defiGPT;
+        }else{
+            textElement.textContent = "Definition not found";
         }
 
     })
