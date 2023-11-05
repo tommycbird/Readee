@@ -86,7 +86,7 @@ function killPopup() {
     console.log("Killing Popup...");
     var popup = document.getElementById('popup');
     // Check if the element actually exists
-    if (popup) {
+    if (popup!=null) {
         popup.remove();
         console.log('Popup removed.');
     } else {

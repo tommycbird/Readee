@@ -85,6 +85,7 @@ async function viewModel() {
 // driver function
 
 function computeRender(){
+    console.log("Computing render...");
     viewModel();
     fetchQR();
 }
