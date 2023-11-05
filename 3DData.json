@@ -11,7 +11,135 @@
   "7c63494f-76ca-4bcd-a8bf-1f66a6710079": {
     "keys": ["arctic fox", "fox"],
     "context": "arctic animals"
+  },
+  "WOOLLY MAMMOTH ARTICLE" : "BELOW==================",
+  "": {
+    "keys": ["elephant", "elephants"],
+    "context": "zoo animals"
+  },
+  "": {
+    "keys": ["woolly", "mammoth", "wooly mammoth"],
+    "context": "extinct animals"
+  },
+  "": {
+    "keys": ["fossil", "fossils"],
+    "context": "extinct animal remains"
+  },
+  "": {
+    "keys": ["dogs", "dog"],
+    "context": "domestic animals"
+  },
+  "": {
+    "keys": ["medieval"],
+    "context": "olden times"
+  },
+  "": {
+    "keys": ["north america", "north american"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["south america", "south american"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["china", "chinese"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["europe", "european"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["russia", "russian"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["dna"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["cave", "caves"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["herd", "herds"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["sled"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["island", "islands"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["skull", "skulls"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["cave paintings", "cave painting"],
+    "context": "----"
+  },
+  "BACTERIA ARTICLE" : "BELOW==================",
+  "": {
+    "keys": [""],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["----"],
+    "context": "----"
   }
 }
-
-
