@@ -138,4 +138,42 @@
     "context": "voyager space probe"
   },
 
+  "ANCIENT EGYPT ARTICLE" : "BELOW==================",
+  "": {
+    "keys": ["pyramid", "pyramids", "great pyramid", "pyramids of giza"],
+    "context": "ancient egyptian architecture"
+  },
+  "": {
+    "keys": ["sphinx"],
+    "context": "ancient egyptian architecture"
+  },
+  "": {
+    "keys": ["king, pharaoh", "kings, pharaohs"],
+    "context": "ancient egypt"
+  },
+  "": {
+    "keys": ["temple"],
+    "context": "ancient egyptian architecture"
+  },
+  "": {
+    "keys": ["monument", "monuments"],
+    "context": "ancient egyptian architecture"
+  },
+  "": {
+    "keys": ["sirius"],
+    "context": "astronomy"
+  },
+  "": {
+    "keys": ["napolean 1"],
+    "context": "french ruler"
+  },
+  "": {
+    "keys": ["tutankhamun"],
+    "context": "egyptian pharaoh"
+  },
+  "": {
+    "keys": ["horus"],
+    "context": "egyptian god"
+  }
+
 }
