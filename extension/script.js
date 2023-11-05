@@ -4,6 +4,15 @@
 //     contentMain.main();
 //   })();
 
+'use strict';
+    
+const script = document.createElement('script');
+script.setAttribute("type", "module");
+script.setAttribute("src", chrome.runtime.getURL('src/js/import/model-viewer.min.js'));
+
+const head = document.head || document.getElementsByTagName("head")[0] || document.documentElement;
+head.insertBefore(script, head.lastChild);
+
 // inject buttons onto key words
 function injectButton( allKeys ) {
     console.log("Injecting Buttons");
@@ -121,16 +130,16 @@ function renderPopup(key, sentence) {
         popup.id = 'popup';
 
         //Load popup scripts
-        const scripts = popup.querySelectorAll('script');
-        scripts.forEach((script) => {
-            if (script.src) {
-            const newScript = document.createElement('script');
-            newScript.src = script.src;
-            document.body.appendChild(newScript);
-            } else {
-            eval(script.innerHTML);
-            }
-        });
+        // const scripts = popup.querySelectorAll('script');
+        // scripts.forEach((script) => {
+        //     if (script.src) {
+        //     const newScript = document.createElement('script');
+        //     newScript.src = script.src;
+        //     document.body.appendChild(newScript);
+        //     } else {
+        //     eval(script.innerHTML);
+        //     }
+        // });
 
 
         // Make sure your popup is visible and on the forefront
