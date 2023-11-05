@@ -1,6 +1,6 @@
 
 function fetchDefGPT(keyword, sentence) {
-    fetch(`https://18.218.226.79:3000/askDefGPT`, {
+    fetch(`https://ytdigest.net:3000/askDefGPT`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

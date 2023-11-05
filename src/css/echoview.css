@@ -83,12 +83,15 @@ model-viewer {
 
 #qr-code {
     position: absolute;
-    top: 0;
-    left: 0;
-    object-fit: cover;
-    width: 400px;
-    height: 400px;
+    top: 50%;
+    left: 50%;
+    width: 400px; /* Let it fill the container */
+    height: 400px; /* Let it fill the container */
+    border-radius: 25px; /* Adjust this value as needed for rounded corners */
+    object-fit: cover; /* Cover will make sure no white space is visible, but the image might be cropped */
+    transform: translate(-50%, -50%) scale(1.2); /* Center the image and scale it up */
 }
+
 
 .qr-button {
     background-color: white;

@@ -2,7 +2,7 @@
 
 // Echo3D model entry ID
 var inputEntryID = "7c63494f-76ca-4bcd-a8bf-1f66a6710079";
-var QRLink = constructQRLink();
+var QRLink = "";
 console.log("Loading asset: " + inputEntryID);
 console.log("QR Link: " + QRLink);
 
