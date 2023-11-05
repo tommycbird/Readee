@@ -80,65 +80,62 @@
     "keys": ["cave paintings", "cave painting"],
     "context": "----"
   },
-  "BACTERIA ARTICLE" : "BELOW==================",
+  "SPACE ARTICLE" : "BELOW==================",
   "": {
-    "keys": [""],
-    "context": "----"
+    "keys": ["planet", "planets"],
+    "context": "astronomy"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["solar system"],
+    "context": "astronomy"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["sun"],
+    "context": "stars"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["earth"],
+    "context": "planets"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["jupiter"],
+    "context": "planets"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["star", "stars"],
+    "context": "stars"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["uranus"],
+    "context": "planets"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["neptune"],
+    "context": "planets"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["moon"],
+    "context": "earth's moon"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["venus"],
+    "context": "planets"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["cloud", "clouds"],
+    "context": "clouds in sky"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["spacecraft", "spacecrafts"],
+    "context": "astronomy"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["telescope", "telescopes"],
+    "context": "astronomy"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["voyager"],
+    "context": "voyager space probe"
   },
-  "": {
-    "keys": ["----"],
-    "context": "----"
-  }
+
 }
