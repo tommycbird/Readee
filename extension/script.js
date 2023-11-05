@@ -129,19 +129,6 @@ function renderPopup(key, sentence) {
 
         popup.id = 'popup';
 
-        //Load popup scripts
-        // const scripts = popup.querySelectorAll('script');
-        // scripts.forEach((script) => {
-        //     if (script.src) {
-        //     const newScript = document.createElement('script');
-        //     newScript.src = script.src;
-        //     document.body.appendChild(newScript);
-        //     } else {
-        //     eval(script.innerHTML);
-        //     }
-        // });
-
-
         // Make sure your popup is visible and on the forefront
         popup.style.zIndex = 2147483647; // Example z-index, it should be higher than other elements
         popup.style.width = '100vw';
