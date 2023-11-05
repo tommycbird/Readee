@@ -1,4 +1,8 @@
-
+(async () => {
+    const src = chrome.runtime.getURL("src/js/import/model-viewer.min.js");
+    const contentMain = await import(src);
+    contentMain.main();
+  })();
 
 // inject buttons onto key words
 function injectButton( allKeys ) {

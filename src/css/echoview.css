@@ -31,7 +31,7 @@ body {
     margin: auto; 
     height: 500px;
     width: 500px;
-    border: 4px dashed grey;
+    border: 0px dashed grey;
     z-index: 0;
 }
 

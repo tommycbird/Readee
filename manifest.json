@@ -29,7 +29,7 @@
         }
     ],
     "content_security_policy": {
-        "extension_pages": "script-src 'self'; object-src 'self';"
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
     },
     "web_accessible_resources": [
         {
@@ -39,7 +39,8 @@
                 "src/js/popup.js",
                 "extension/style.css",
                 "extension/script.js",
-                "3DData.json"            
+                "3DData.json",
+                "src/js/import/model-viewer.min.js"      
             ],
             "matches": [
                 "<all_urls>"
@@ -50,6 +51,7 @@
         }
     ],
     "background": {
-        "service_worker": "background.js"
+        "service_worker": "background.js",
+        "type": "module"
     }
 }
