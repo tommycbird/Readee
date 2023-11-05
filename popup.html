@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup</title>
-    <link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet'>
-</head>
-<body>
-    <!-- <body onload="computeRender()"> -->
-    <!-- <button data-modal-target = "#modal">Open Modal</button> -->
-    <div class="modal" id = "modal">
-        <button data-close-button class="close-button" onclick="killPopup()">&times;</button>
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="head" class = "text">Arctic Fox</div>
-            </div>
-            <div class="modal-body">
-                <div class="modal-text">
-                    An arctic fox is a fox with a thick coat that turns white in winter, found on the tundra of North America and Eurasia.
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Readee Popup</title>
+        <link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet'>
+    </head>
+    <body>
+        <!-- <body onload="computeRender()"> -->
+        <!-- <button data-modal-target = "#modal">Open Modal</button> -->
+        <div class="modal" id = "modal">
+            <button data-close-button class="close-button" onclick="killPopup()">&times;</button>
+            <div class="modal-content">
+                <div class="modal-left">
+                    <div class="modal-header">Arctic Fox</div>
+                    <div class="modal-text">
+                        An arctic fox is a fox with a thick coat that turns white in winter, found on the tundra of North America and Eurasia.
+                    </div>
                 </div>
                 <div class="model-box">
                     <model-viewer id="modelViewer" ar shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
                     <div id="qr-view" class="hidden qr-view">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://tommybird.net&size=450x450" id="qr-code" alt="" title=""/>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?data=NULL&size=450x450" id="qr-code" alt="" title=""/>
                     </div>
-                    
                     <button type="bird-button" id="toggle-button" class="qr-button">AR</button>
                 </div>
             </div>
         </div>
-    </div>
-     <div id="overlay"></div>
-    </div>
-</body>
+        <div id="overlay"></div>
+    </body>
 </html>

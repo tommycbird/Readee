@@ -18,8 +18,10 @@
             "js": [
                 "extension/script.js",
                 "src/js/echo.js",
+                "src/js/gpt.js",
                 "src/js/import/jquery.min.js",
-                "src/js/import/Echo3DAPI.js"
+                "src/js/import/Echo3DAPI.js",
+                "src/js/import/model-viewer.min.js"
             ],
             "css": [
                 "extension/style.css",
@@ -27,9 +29,6 @@
             ]
         }
     ],
-    "content_security_policy": {
-        "extension_pages": "script-src 'self'; object-src 'self';"
-    },
     "web_accessible_resources": [
         {
             "resources": [
@@ -38,8 +37,7 @@
                 "src/js/popup.js",
                 "extension/style.css",
                 "extension/script.js",
-                "3DData.json",
-                "src/js/import/model-viewer.min.js"
+                "3DData.json"            
             ],
             "matches": [
                 "<all_urls>"

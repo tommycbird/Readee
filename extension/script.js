@@ -1,4 +1,6 @@
 
+
+// inject buttons onto key words
 function injectButton( allKeys ) {
     console.log("Injecting Buttons");
 
@@ -118,15 +120,27 @@ function renderPopup(key, sentence) {
         popup.style.width = '100vw';
         popup.style.height = '100vh';
         popup.style.position = 'fixed'; // So that it stays in the viewport
-        // popup.style.top = '50%'; // Center it
-        // popup.style.left = '50%'; // Center it
-        // popup.style.transform = 'translate(-50%, -50%)'; // Adjust for exact center
+
+        // Add event listeners to the close button and toggle button
         popup.querySelector('.close-button').addEventListener('click', killPopup);
         popup.querySelector('#toggle-button').addEventListener('click', toggleView);
-        // Set render parameters
-        computeRender();
-        // Set definition parameters
         
+        // Set render parameters and compute  --> MAKE THIS DYNAMIC <--
+        changeModel("7c63494f-76ca-4bcd-a8bf-1f66a6710079");
+        computeRender();
+        
+        // Set definition parameters and overwrite
+        const headerElement = popup.querySelector('.modal-header .head');
+        const textElement = popup.querySelector('.modal-body .modal-text');
+
+        // Change the text content
+        headerElement.textContent = key;
+        const definition = fetchDefGPT(key, sentence);
+        if (definition != null && definition != "") {
+            textElement.textContent = definition;
+        } else {
+            textElement.textContent = "Definition not found...";
+        }
     })
         .catch(error => {
         // Handle any errors that occurred during fetch

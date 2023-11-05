@@ -41,7 +41,6 @@ function fetchQR() {
 // change model
 function changeModel(entryID) {
     inputEntryID = entryID;
-    viewModel()
 }
 
 // get api_key

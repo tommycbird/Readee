@@ -10,6 +10,7 @@ function fetchDefGPT(keyword, sentence) {
     .then(response => response.json())
     .then(data => {
         console.log('DEFINITION Response:', data.answer);
+        return data.answer;
     })
     .catch(error => {
         console.error('Error getting response from GPT:', error);
@@ -27,6 +28,7 @@ function checkGPT(keyword, sentence, context) {
     .then(response => response.json())
     .then(data => {
         console.log('CHECK Response:', data.answer);
+        return data.answer;
     })
     .catch(error => {
         console.error('Error getting response from GPT:', error);
