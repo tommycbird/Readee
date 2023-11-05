@@ -1,3 +1,8 @@
+function renderPopup(key, sentence) {
+    
+}
+
+
 function injectButton( allKeys ) {
     console.log("Injecting Buttons");
 
@@ -25,8 +30,8 @@ function injectButton( allKeys ) {
 
             const nounParentElement = nounElement.parentElement;
             const nounParentContent = nounParentElement.textContent;
-            // console.log("parent: " + nounParentContent);
-            // console.log("content len:" + nounParentContent.length);
+            //console.log("parent: " + nounParentContent);
+            //console.log("content len:" + nounParentContent.length);
             
             const nounIndex = nounParentContent.indexOf(nounElement.textContent);
 
@@ -36,7 +41,7 @@ function injectButton( allKeys ) {
             const lastQuestion = (nounParentContent.lastIndexOf("? ", nounIndex) === -1) ? 0 : nounParentContent.lastIndexOf("? ", nounIndex) + 2;
             // getting the index of the start of the sentence
             const sentenceStart = Math.max(lastPeriod, lastExclamation, lastQuestion);
-            // console.log("last period: " + sentenceStart);
+            //console.log("last period: " + sentenceStart);
 
             // check for the next occurence of period, exclamation point, or question mark
             let nextPeriod = nounParentContent.length, nextExclamation = nounParentContent.length, nextQuestion = nounParentContent.length;
@@ -45,7 +50,7 @@ function injectButton( allKeys ) {
             nextQuestion = (nounParentContent.indexOf("? ", nounIndex) === -1) ? nounParentContent.length : nounParentContent.indexOf("? ", nounIndex);
             // getting the index of the end of the sentence
             const sentenceEnd = Math.min(nextPeriod, nextExclamation, nextQuestion) + 1;
-            // console.log("next period: " + sentenceEnd);
+            //console.log("next period: " + sentenceEnd);
 
             // getting the sentence the current noun is in
             const nounSentence = nounParentContent.substring(sentenceStart, sentenceEnd);
@@ -73,6 +78,9 @@ function injectButton( allKeys ) {
             nounParentElement.replaceChild(popupWrapper, nounElement);
 
             console.log("success");
+
+            // call popup window
+            renderPopup(nounButtonTitle, nounSentence);
         });
     }
 
@@ -138,7 +146,7 @@ function injectButton( allKeys ) {
             // getting the index of the end of the sentence
             const sentenceEnd = Math.min(nextPeriod, nextExclamation, nextQuestion) + 1;
             // console.log("next period: " + sentenceEnd);
-            
+
             // getting the sentence the current noun is in
             const nounSentence = nounParentContent.substring(sentenceStart, sentenceEnd);
             console.log("sentence: " + nounSentence);
