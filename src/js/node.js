@@ -28,11 +28,11 @@ app.post('/askDefGPT', async (req, res) => {
         const messages = [
             {
                 role: "system",
-                content: "You are going to be helping give short, yet in depth definitions of words given the context that they are used in."
+                content: "You are going to give short, yet in-depth definitions of words given the context that they are used in."
             },
             {
                 role: "user",
-                content: "The definition you give should not be too verbose or use complicated vocabulary so it is easy to understand. The response should be kept below 20 words or roughly two sentences. The definition (respsonse) should also not explicitly refer to the sentence it was used in "
+                content: "The definition you give should not be too verbose or use complicated vocabulary so it is easy to understand. The response should be kept below 20 words or roughly two sentences. The definition (response) should also not explicitly refer to the sentence it was used in "
             },
             {
                 role: "user",
@@ -41,6 +41,22 @@ app.post('/askDefGPT', async (req, res) => {
             {
                 role: "assistant",
                 content: "A program is a set of instructions that a computer follows to perform specific tasks. These instructions are usually written in a programming language that the computer can interpret and execute."
+            },
+            {
+                role: "user",
+                content: "Please give me the definition of the word 'virus' in the sentence 'The laboratory is studying the behavior of the influenza virus to develop a more effective vaccine.' "
+            },
+            {
+                role: "assistant",
+                content: "A virus is a pathogen that invades living cells to replicate, often causing disease."
+            },
+            {
+                role: "user",
+                content: "Please give me the definition of the word 'virus' in the sentence 'Her computer was infected with a virus that corrupted all her files, prompting her to install updated antivirus software.' "
+            },
+            {
+                role: "assistant",
+                content: "A virus is a malicious software that replicates by modifying other programs, potentially leading to data loss or system damage."
             },
             {
                 role: "user",
