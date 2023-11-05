@@ -75,8 +75,10 @@ function injectButton( allKeys ) {
 
             console.log("success");
 
-            // call popup window
-            renderPopup(nounButtonTitle, nounSentence);
+            // Attach event listener to the button
+            popupButton.addEventListener('click', function() {
+                renderPopup(nounButtonTitle, nounSentence);
+            });
         });
     }
 
