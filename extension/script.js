@@ -9,7 +9,7 @@ function injectButton( allKeys ) {
     console.log("Injecting Buttons");
 
     // injecting noun buttons for britannica
-    if (window.location.hostname === 'www.britannica.com') {
+    if (2==2) {
         // adding fonts awesome to the page
         const headElement = document.querySelector("head");
         const fontAwesomeLink = document.createElement("link");

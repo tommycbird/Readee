@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://ads.adthrive.com/builds/core/c53ed52/html/i.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><title>AdThrive</title><script>(function () {
+
+  /**
+   * A wrapper around localStorage, sessionStorage, and cookies. This class has significan functional
+   * overlap with the StorageHandler class, but is used in different contexts. This class is intended to be
+   * used in contexts where tsyringe is not available and dependencies are not wanted/needed, such as in
+   * iframes.
+   */
+  var StorageService = /** @class */ (function () {
+      function StorageService(storageType) {
+          this._prefix = 'adthrive_';
+          this._storageType = storageType;
+          if (storageType === 'local') {
+              this._storage = window.localStorage;
+          }
+          else if (storageType === 'session') {
+              this._storage = window.sessionStorage;
+          }
+      }
+      StorageService.prototype._getExpiryDate = function (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+          return date.toUTCString();
+      };
+      StorageService.prototype.read = function (key) {
+          var prefixedKey = this._prefix + key;
+          if (this._storageType === 'cookie') {
+              return this._readCookie(prefixedKey);
+          }
+          else {
+              return this._readFromStorage(prefixedKey);
+          }
+      };
+      StorageService.prototype.delete = function (key) {
+          var _a;
+          var prefixedKey = this._prefix + key;
+          if (this._storageType === 'cookie') {
+              document.cookie = "".concat(prefixedKey, "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/");
+          }
+          else {
+              (_a = this._storage) === null || _a === void 0 ? void 0 : _a.removeItem(prefixedKey);
+          }
+      };
+      StorageService.prototype.set = function (key, value, expiryDays, resetOnRead) {
+          if (expiryDays === void 0) { expiryDays = 400; }
+          if (resetOnRead === void 0) { resetOnRead = false; }
+          var prefixedKey = this._prefix + key;
+          if (this._storageType === 'cookie') {
+              this._setCookie(prefixedKey, value, expiryDays);
+          }
+          else {
+              this._setInStorage(prefixedKey, value, expiryDays, resetOnRead);
+          }
+      };
+      StorageService.prototype._readCookie = function (prefixedKey) {
+          var cookie = document.cookie.split('; ').find(function (row) { return row.startsWith(prefixedKey); });
+          if (!cookie)
+              return null;
+          try {
+              return JSON.parse(decodeURIComponent(cookie.split('=')[1]));
+          }
+          catch (error) {
+              // If parsing fails, return the value as is
+              return (cookie.split('=')[1] || null);
+          }
+      };
+      StorageService.prototype._readFromStorage = function (prefixedKey) {
+          var _a;
+          var item = (_a = this._storage) === null || _a === void 0 ? void 0 : _a.getItem(prefixedKey);
+          if (!item)
+              return null;
+          try {
+              var data = JSON.parse(item);
+              if (new Date().getTime() > data.expiry) {
+                  this.delete(prefixedKey);
+                  return null;
+              }
+              if (data.resetOnRead) {
+                  this._resetExpiry(data, prefixedKey);
+              }
+              return data.value;
+          }
+          catch (error) {
+              // If parsing fails, return the value as is
+              return item;
+          }
+      };
+      StorageService.prototype._resetExpiry = function (data, prefixedKey) {
+          var _a;
+          data.expiry = new Date().getTime() + data.expiryDays * 24 * 60 * 60 * 1000;
+          (_a = this._storage) === null || _a === void 0 ? void 0 : _a.setItem(prefixedKey, JSON.stringify(data));
+      };
+      StorageService.prototype._setCookie = function (prefixedKey, value, expiryDays) {
+          document.cookie = "".concat(prefixedKey, "=").concat(JSON.stringify(value), "; expires=").concat(this._getExpiryDate(expiryDays), "; path=/");
+      };
+      StorageService.prototype._setInStorage = function (prefixedKey, value, expiryDays, resetOnRead) {
+          var _a;
+          var data = {
+              value: value,
+              expiry: expiryDays ? new Date().getTime() + expiryDays * 24 * 60 * 60 * 1000 : null,
+              expiryDays: expiryDays,
+              resetOnRead: resetOnRead,
+          };
+          (_a = this._storage) === null || _a === void 0 ? void 0 : _a.setItem(prefixedKey, JSON.stringify(data));
+      };
+      return StorageService;
+  }());
+
+  var PiiDataEventAction;
+  (function (PiiDataEventAction) {
+      PiiDataEventAction["GetPiiData"] = "adthrive_GetPiiData";
+      PiiDataEventAction["SetPiiData"] = "adthrive_SetPiiData";
+      PiiDataEventAction["DeletePiiData"] = "adthrive_DeletePiiData";
+      PiiDataEventAction["SendPiiData"] = "adthrive_SendPiiData";
+  })(PiiDataEventAction || (PiiDataEventAction = {}));
+
+  var cookieStorageService = new StorageService('cookie');
+  var localStorageService = new StorageService('local');
+  var storageKey = 'PiiData';
+  var handleGetIdentityMessage = function (event) {
+      var piiData = localStorageService.read(storageKey) || cookieStorageService.read(storageKey) || null;
+      var message = {
+          action: PiiDataEventAction.SendPiiData,
+          piiData: piiData,
+      };
+      window.parent.postMessage(message, event.origin);
+  };
+  var handleSetIdentityMessage = function (event) {
+      localStorageService.set(storageKey, event.data.piiData);
+      cookieStorageService.set(storageKey, event.data.piiData);
+  };
+  var handleDeleteIdentityMessage = function () {
+      localStorageService.delete(storageKey);
+      cookieStorageService.delete(storageKey);
+  };
+  var eventHandler = function (event) {
+      var referrer = document.referrer.split('/');
+      var hostname = referrer[0] === '' ? '' : "".concat(referrer[0], "//").concat(referrer[2]);
+      if (hostname !== event.origin)
+          return;
+      var action = event.data.action;
+      if (action === PiiDataEventAction.GetPiiData) {
+          handleGetIdentityMessage(event);
+      }
+      else if (action === PiiDataEventAction.SetPiiData) {
+          handleSetIdentityMessage(event);
+      }
+      else if (action === PiiDataEventAction.DeletePiiData) {
+          handleDeleteIdentityMessage();
+      }
+  };
+
+  try {
+      window.addEventListener('message', eventHandler);
+  }
+  catch (err) {
+      console.warn(err);
+  }
+
+})();</script></head><body></body></html>
