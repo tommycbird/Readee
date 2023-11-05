@@ -12,75 +12,6 @@
     "context": "arctic animals"
   },
   "": {
-    "keys": ["elephant", "elephants"],
-    "context": "zoo animals"
-  },
-  "": {
-    "keys": ["woolly", "mammoth", "wooly mammoth"],
-    "context": "extinct animals"
-  },
-  "": {
-    "keys": ["fossil", "fossils"],
-    "context": "extinct animal remains"
-  },
-  "": {
-    "keys": ["dogs", "dog"],
-    "context": "domestic animals"
-  },
-  "": {
-    "keys": ["medieval"],
-    "context": "olden times"
-  },
-  "": {
-    "keys": ["north america", "north american"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["south america", "south american"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["china", "chinese"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["europe", "european"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["russia", "russian"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["dna"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["cave", "caves"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["herd", "herds"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["sled"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["island", "islands"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["skull", "skulls"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["cave paintings", "cave painting"],
-    "context": "----"
-  },
-  "SPACE ARTICLE" : "BELOW==================",
-  "": {
     "keys": ["planet", "planets"],
     "context": "astronomy"
   },
@@ -135,10 +66,7 @@
   "": {
     "keys": ["voyager"],
     "context": "voyager space probe"
-<<<<<<< HEAD
   },
-
-  "ANCIENT EGYPT ARTICLE" : "BELOW==================",
   "": {
     "keys": ["pyramid", "pyramids", "great pyramid", "pyramids of giza"],
     "context": "ancient egyptian architecture"
@@ -175,8 +103,4 @@
     "keys": ["horus"],
     "context": "egyptian god"
   }
-
-=======
-  }
->>>>>>> e78a5bf10ea07d9f6feb26821a698a93ff5fccca
 }
