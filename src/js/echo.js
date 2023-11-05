@@ -6,6 +6,8 @@ var QRLink = constructQRLink();
 console.log("Loading asset: " + inputEntryID);
 console.log("QR Link: " + QRLink);
 
+var response = {};
+
 // toggle view between 3D and QR Code
 function toggleView() {
     var qrView = $('#qr-view');
@@ -32,9 +34,8 @@ function toggleView() {
 function fetchQR() {
     // get class qr-code
     const qrCode = document.getElementById('qr-code');
-
     // set src attribute
-    qrCode.src = "https://api.qrserver.com/v1/create-qr-code/?data=" + QRLink + "&size=450x450";
+    qrCode.src = QRLink;
 }
 
 
@@ -53,15 +54,24 @@ function getSecKey() {
     return 'Tbq3F8GdH41Q8KfvI0yxcZeT';
 }
 
+
+
+// "additionalData": {
+// "grWebXRStorageID": "b888814-01c3-44be-b005-4a183266c479. pg"
+// "screenshotStorageID": "6af76ce2-2f57-4ed0-82d8-42652f0eddbe. png",
+// "grWebARStorageFilename": "qr _webar _misty-resonance-6489. png"
+
+// get image from api response
+function getImage() {
+    const picRef = response.db.inputEntryID.additionalData.screenshotStorageID;
+    console.log("Image: " + picRef);
+    return picRef;
+}
+
 // log API response in console
 function logResult(res) {
     console.log("Echo3D API response:");
     console.log(res);
-}
-
-// construct QR link
-function constructQRLink(){
-    return "https://api.echo3d.com/webar?key=" + getApiKey() + "&entry=" + inputEntryID;
 }
 
 // view 3D model
@@ -70,11 +80,16 @@ async function viewModel() {
     const echoApi = new Echo3DApi(getApiKey(), getSecKey());
     // query for specific Entry
     let result = await echoApi.queryEntry(inputEntryID);
+    response=result;
     logResult(result);
     let glbHologramStorageID = JSON.parse(result).db[inputEntryID].additionalData.glbHologramStorageID;
+    let imageStorageID = JSON.parse(result).db[inputEntryID].additionalData.screenshotStorageID;
+    let QRCodeStorageID = JSON.parse(result).db[inputEntryID].additionalData.qrWebARStorageID;
+    QRLink = "https://api.echo3d.co/query?key="+getApiKey()+"&secKey="+getSecKey()+"&file="+QRCodeStorageID;
+    fetchQR();
     let newSrc = "https://storage.echo3d.com/0_model_samples/" + glbHologramStorageID;
     let newEnvironmentImage = "";
-    let newPoster = "";
+    let newPoster = "https://api.echo3d.co/query?key="+getApiKey()+"&secKey="+getSecKey()+"&file="+imageStorageID;
     $('#modelViewer').attr("src", newSrc);
     $('#modelViewer').attr("environment-image", newEnvironmentImage);
     $('#modelViewer').attr("poster", newPoster);

@@ -1,8 +1,8 @@
-(async () => {
-    const src = chrome.runtime.getURL("src/js/import/model-viewer.min.js");
-    const contentMain = await import(src);
-    contentMain.main();
-  })();
+// (async () => {
+//     const src = chrome.runtime.getURL("src/js/import/model-viewer.min.js");
+//     const contentMain = await import(src);
+//     contentMain.main();
+//   })();
 
 // inject buttons onto key words
 function injectButton( allKeys ) {
@@ -120,17 +120,17 @@ function renderPopup(key, sentence) {
 
         popup.id = 'popup';
 
-        // Load popup scripts
-        // const scripts = popup.querySelectorAll('script');
-        // scripts.forEach((script) => {
-        //     if (script.src) {
-        //     const newScript = document.createElement('script');
-        //     newScript.src = script.src;
-        //     document.body.appendChild(newScript);
-        //     } else {
-        //     eval(script.innerHTML);
-        //     }
-        // });
+        //Load popup scripts
+        const scripts = popup.querySelectorAll('script');
+        scripts.forEach((script) => {
+            if (script.src) {
+            const newScript = document.createElement('script');
+            newScript.src = script.src;
+            document.body.appendChild(newScript);
+            } else {
+            eval(script.innerHTML);
+            }
+        });
 
 
         // Make sure your popup is visible and on the forefront
@@ -145,7 +145,7 @@ function renderPopup(key, sentence) {
         
         // Set render parameters and compute  --> MAKE THIS DYNAMIC <--
         changeModel("7c63494f-76ca-4bcd-a8bf-1f66a6710079");
-        computeRender();
+        computeRender();        
         
         // Set definition parameters and overwrite
         const headerElement = popup.querySelector('.modal-header');
@@ -159,6 +159,7 @@ function renderPopup(key, sentence) {
         } else {
             textElement.textContent = "Definition not found...";
         }
+
     })
         .catch(error => {
         // Handle any errors that occurred during fetch
