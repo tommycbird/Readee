@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     justify-content: space-between; 
     font-size: 16px;
-    background-image: url('./Before.jpeg');
+    background-image: url('../img/bg.jpeg');
     background-size: cover;
 }
 
@@ -24,7 +24,7 @@ body {
 }
 
 .model-box {
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: center; 
     align-items: center;
@@ -76,11 +76,18 @@ model-viewer {
 }
 
 .qr-view {
-    width: 80%;
-    height: 80%;
-    z-index: 1;
+    z-index: 5;
     animation: 1s ease-in-out 0s 1 fadeView forwards;
     background-color: transparent;
+}
+
+#qr-code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
 }
 
 .qr-button {
@@ -96,7 +103,7 @@ model-viewer {
     bottom: -40px;
     right: -40px;
     margin: 10px;
-    z-index: 2;
+    z-index: 20;
 }
 
 .qr-button:hover {
