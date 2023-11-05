@@ -130,11 +130,11 @@ function renderPopup(key, sentence) {
         computeRender();
         
         // Set definition parameters and overwrite
-        const headerElement = popup.querySelector('.modal-header .head');
-        const textElement = popup.querySelector('.modal-body .modal-text');
+        const headerElement = popup.querySelector('.modal-header');
+        const textElement = popup.querySelector('.modal-text');
 
         // Change the text content
-        headerElement.textContent = key;
+        headerElement.textContent = capitalized(key);
         const definition = fetchDefGPT(key, sentence);
         if (definition != null && definition != "") {
             textElement.textContent = definition;
@@ -148,6 +148,11 @@ function renderPopup(key, sentence) {
     });
 }
 
+function capitalized(str) {
+    return str.split(' ').map(word => {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }).join(' ');
+  }
 
 // fetching the list of echo3D models
 async function getJSON() {
