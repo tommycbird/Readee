@@ -46,12 +46,12 @@ function changeModel(entryID) {
 
 // get api_key
 function getApiKey() {
-    return 'misty-resonance-6489';
+    return 'ancient-rain-5372';
 }
 
 // get sec_key
 function getSecKey() {
-    return 'Tbq3F8GdH41Q8KfvI0yxcZeT';
+    return 'HRfrzxGipSPVLSGLkfqIaywm';
 }
 
 

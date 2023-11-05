@@ -1,13 +1,13 @@
 {
   "d7f04eb9-2271-43ec-b5b3-0d33af1c10b9": {
-    "keys": ["crystal", "crystalline structure"],
+    "keys": ["crystal", "crystal structure"],
     "context": "rocks and minerals"
   },
-  "5fd4b6c6-07e4-4350-b6ee-a50de44da4fd": {
+  "ab063d7a-a054-408f-ab0f-71735a749c4b": {
     "keys": ["skyscraper", "empire state building"],
     "context": "architecture"
   },
-  "7c63494f-76ca-4bcd-a8bf-1f66a6710079": {
+  "ae7b0050-b652-40fb-a654-939f131e3a23": {
     "keys": ["arctic fox", "fox"],
     "context": "arctic animals"
   },
@@ -67,11 +67,19 @@
     "keys": ["voyager"],
     "context": "voyager space probe"
   },
-  "": {
+  "f5a6f20b-02fb-4b84-960a-2cd761caf8bd": {
     "keys": ["pyramid", "pyramids", "great pyramid", "pyramids of giza"],
     "context": "ancient egyptian architecture"
   },
-  "": {
+  "218ccd07-6a6b-4e22-9067-d48284046ff0": {
+    "keys": ["giza"],
+    "context": "ancient egyptian architecture"
+  },
+  "9741d122-4437-4972-99ca-54a395b23ccd": {
+    "keys": ["memphis"],
+    "context": "ancient egyptian architecture"
+  },
+  "8cb9f597-5306-4225-924c-357d5120c9f7": {
     "keys": ["sphinx"],
     "context": "ancient egyptian architecture"
   },
@@ -79,11 +87,11 @@
     "keys": ["king, pharaoh", "kings, pharaohs"],
     "context": "ancient egypt"
   },
-  "": {
-    "keys": ["temple"],
+  "e806cdde-3ca4-46fe-9db9-ff1b0a4e2e46": {
+    "keys": ["temple", "mortuary temple"],
     "context": "ancient egyptian architecture"
   },
-  "": {
+  "7e3c281e-1485-42c1-b86c-c49de47930fa": {
     "keys": ["monument", "monuments"],
     "context": "ancient egyptian architecture"
   },
