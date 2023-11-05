@@ -6,7 +6,8 @@
     <title>Popup</title>
     <link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet'>
 </head>
-<body onload="computeRender()">
+<body>
+    <!-- <body onload="computeRender()"> -->
     <!-- <button data-modal-target = "#modal">Open Modal</button> -->
     <div class="modal" id = "modal">
         <button data-close-button class="close-button" onclick="killPopup()">&times;</button>
@@ -24,7 +25,7 @@
                         <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://tommybird.net&size=450x450" id="qr-code" alt="" title=""/>
                     </div>
                     
-                    <button type="button" id="toggle-button" class="qr-button" onclick="toggleView()">AR</button>
+                    <button type="bird-button" id="toggle-button" class="qr-button">AR</button>
                 </div>
             </div>
         </div>

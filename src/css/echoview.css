@@ -78,6 +78,7 @@ model-viewer {
 .qr-button {
     background-color: white;
     border-radius: 10px;
+    font-size: 1.5rem;
     font-family: 'Verdana';
     font-weight: bold;
     position: absolute;
