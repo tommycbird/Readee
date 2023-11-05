@@ -14,7 +14,7 @@ const head = document.head || document.getElementsByTagName("head")[0] || docume
 head.insertBefore(script, head.lastChild);
 
 // inject buttons onto key words
-function injectButton( allKeys ) {
+function injectButton( allKeys, entryIDs ) {
     console.log("Injecting Buttons");
 
     // injecting noun buttons for britannica
@@ -89,10 +89,12 @@ function injectButton( allKeys ) {
             nounParentElement.replaceChild(popupWrapper, nounElement);
 
             console.log("success");
-
+            
             // Attach event listener to the button
+            const modelID = entryIDs.get(nounButtonTitle.toLowerCase());
+            // console.log(nounButtonTitle + ": " + modelID);    
             popupButton.addEventListener('click', function() {
-                renderPopup(nounButtonTitle, nounSentence);
+                renderPopup(nounButtonTitle, nounSentence, modelID);
             });
         });
     }
@@ -112,7 +114,7 @@ function killPopup() {
     }
 }
 
-function renderPopup(key, sentence) {
+function renderPopup(key, sentence, entryID) {
     console.log("Rendering Popup...");
     // Fetch the content of popup.html
     fetch(chrome.runtime.getURL('../popup.html'))
@@ -129,19 +131,6 @@ function renderPopup(key, sentence) {
 
         popup.id = 'popup';
 
-        //Load popup scripts
-        // const scripts = popup.querySelectorAll('script');
-        // scripts.forEach((script) => {
-        //     if (script.src) {
-        //     const newScript = document.createElement('script');
-        //     newScript.src = script.src;
-        //     document.body.appendChild(newScript);
-        //     } else {
-        //     eval(script.innerHTML);
-        //     }
-        // });
-
-
         // Make sure your popup is visible and on the forefront
         popup.style.zIndex = 2147483647; // Example z-index, it should be higher than other elements
         popup.style.width = '100vw';
@@ -153,7 +142,7 @@ function renderPopup(key, sentence) {
         popup.querySelector('#toggle-button').addEventListener('click', toggleView);
         
         // Set render parameters and compute  --> MAKE THIS DYNAMIC <--
-        changeModel("7c63494f-76ca-4bcd-a8bf-1f66a6710079");
+        changeModel(entryID);
         computeRender();        
         
         // Set definition parameters and overwrite
@@ -186,6 +175,7 @@ function capitalized(str) {
 async function getJSON() {
     // making the array to store all the keys
     let allKeys = [];
+    let entryIDs = new Map();
 
     // Use the fetch API to load the JSON file
     const jsonURL = chrome.runtime.getURL("3DData.json");
@@ -202,16 +192,21 @@ async function getJSON() {
             // Loop through each property in the object
             for (let id in data) {
                 if (data.hasOwnProperty(id)) {
-                // Concatenate the keys from this entry into the allKeys array
-                allKeys = allKeys.concat(data[id].keys);
+                    // Concatenate the keys from this entry into the allKeys array
+                    allKeys = allKeys.concat(data[id].keys);
+
+                    for (let key in data[id].keys) {
+                        entryIDs.set(data[id].keys[key].toLowerCase(), id);
+                    }
                 }
             }
 
             // allKeys now contains all the words in "keys"
             console.log(allKeys); // Output the array to the console
+            console.log(entryIDs);
         }).then(() => {
             // inject the buttons
-            injectButton(allKeys);
+            injectButton(allKeys, entryIDs);
         })
         .catch(error => {
             // If there is any error you will catch them here
