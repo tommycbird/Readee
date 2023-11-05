@@ -11,134 +11,96 @@
     "keys": ["arctic fox", "fox"],
     "context": "arctic animals"
   },
-  "WOOLLY MAMMOTH ARTICLE" : "BELOW==================",
   "": {
-    "keys": ["elephant", "elephants"],
-    "context": "zoo animals"
+    "keys": ["planet", "planets"],
+    "context": "astronomy"
   },
   "": {
-    "keys": ["woolly", "mammoth", "wooly mammoth"],
-    "context": "extinct animals"
+    "keys": ["solar system"],
+    "context": "astronomy"
   },
   "": {
-    "keys": ["fossil", "fossils"],
-    "context": "extinct animal remains"
+    "keys": ["sun"],
+    "context": "stars"
   },
   "": {
-    "keys": ["dogs", "dog"],
-    "context": "domestic animals"
+    "keys": ["earth"],
+    "context": "planets"
   },
   "": {
-    "keys": ["medieval"],
-    "context": "olden times"
+    "keys": ["jupiter"],
+    "context": "planets"
   },
   "": {
-    "keys": ["north america", "north american"],
-    "context": "----"
+    "keys": ["star", "stars"],
+    "context": "stars"
   },
   "": {
-    "keys": ["south america", "south american"],
-    "context": "----"
+    "keys": ["uranus"],
+    "context": "planets"
   },
   "": {
-    "keys": ["china", "chinese"],
-    "context": "----"
+    "keys": ["neptune"],
+    "context": "planets"
   },
   "": {
-    "keys": ["europe", "european"],
-    "context": "----"
+    "keys": ["moon"],
+    "context": "earth's moon"
   },
   "": {
-    "keys": ["russia", "russian"],
-    "context": "----"
+    "keys": ["venus"],
+    "context": "planets"
   },
   "": {
-    "keys": ["dna"],
-    "context": "----"
+    "keys": ["cloud", "clouds"],
+    "context": "clouds in sky"
   },
   "": {
-    "keys": ["cave", "caves"],
-    "context": "----"
+    "keys": ["spacecraft", "spacecrafts"],
+    "context": "astronomy"
   },
   "": {
-    "keys": ["herd", "herds"],
-    "context": "----"
+    "keys": ["telescope", "telescopes"],
+    "context": "astronomy"
   },
   "": {
-    "keys": ["sled"],
-    "context": "----"
+    "keys": ["voyager"],
+    "context": "voyager space probe"
   },
   "": {
-    "keys": ["island", "islands"],
-    "context": "----"
+    "keys": ["pyramid", "pyramids", "great pyramid", "pyramids of giza"],
+    "context": "ancient egyptian architecture"
   },
   "": {
-    "keys": ["skull", "skulls"],
-    "context": "----"
+    "keys": ["sphinx"],
+    "context": "ancient egyptian architecture"
   },
   "": {
-    "keys": ["cave paintings", "cave painting"],
-    "context": "----"
-  },
-  "BACTERIA ARTICLE" : "BELOW==================",
-  "": {
-    "keys": [""],
-    "context": "----"
+    "keys": ["king, pharaoh", "kings, pharaohs"],
+    "context": "ancient egypt"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["temple"],
+    "context": "ancient egyptian architecture"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["monument", "monuments"],
+    "context": "ancient egyptian architecture"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["sirius"],
+    "context": "astronomy"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["napolean 1"],
+    "context": "french ruler"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["tutankhamun"],
+    "context": "egyptian pharaoh"
   },
   "": {
-    "keys": ["----"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["----"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["----"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["----"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["----"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["----"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["----"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["----"],
-    "context": "----"
-  },
-  "": {
-    "keys": ["----"],
-    "context": "----"
+    "keys": ["horus"],
+    "context": "egyptian god"
   }
 }

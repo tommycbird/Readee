@@ -1,6 +1,6 @@
 
 function fetchDefGPT(keyword, sentence) {
-    fetch(`${"http://localhost:3000"}/askDefGPT`, {
+    fetch(`https://18.218.226.79:3000/askDefGPT`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -10,6 +10,7 @@ function fetchDefGPT(keyword, sentence) {
     .then(response => response.json())
     .then(data => {
         console.log('DEFINITION Response:', data.answer);
+        return data.answer;
     })
     .catch(error => {
         console.error('Error getting response from GPT:', error);
@@ -17,7 +18,7 @@ function fetchDefGPT(keyword, sentence) {
 }
 
 function checkGPT(keyword, sentence, context) {
-    fetch(`${"http://localhost:3000"}/checkGPT`, {
+    fetch(`https://18.218.226.79:3000/checkGPT`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -27,6 +28,7 @@ function checkGPT(keyword, sentence, context) {
     .then(response => response.json())
     .then(data => {
         console.log('CHECK Response:', data.answer);
+        return data.answer;
     })
     .catch(error => {
         console.error('Error getting response from GPT:', error);
