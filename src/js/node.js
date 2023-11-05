@@ -28,7 +28,7 @@ app.post('/askDefGPT', async (req, res) => {
         const messages = [
             {
                 role: "system",
-                content: "Your going to be helping give short yet in depth definitions of words given the context that they are used in"
+                content: "You are going to be helping give short, yet in depth definitions of words given the context that they are used in."
             },
             {
                 role: "user",
