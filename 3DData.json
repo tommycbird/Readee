@@ -1,4 +1,3 @@
-
 {
   "d7f04eb9-2271-43ec-b5b3-0d33af1c10b9": {
     "keys": ["crystal", "crystalline structure"],
@@ -11,7 +10,173 @@
   "7c63494f-76ca-4bcd-a8bf-1f66a6710079": {
     "keys": ["arctic fox", "fox"],
     "context": "arctic animals"
+  },
+  "": {
+    "keys": ["elephant", "elephants"],
+    "context": "zoo animals"
+  },
+  "": {
+    "keys": ["woolly", "mammoth", "wooly mammoth"],
+    "context": "extinct animals"
+  },
+  "": {
+    "keys": ["fossil", "fossils"],
+    "context": "extinct animal remains"
+  },
+  "": {
+    "keys": ["dogs", "dog"],
+    "context": "domestic animals"
+  },
+  "": {
+    "keys": ["medieval"],
+    "context": "olden times"
+  },
+  "": {
+    "keys": ["north america", "north american"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["south america", "south american"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["china", "chinese"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["europe", "european"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["russia", "russian"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["dna"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["cave", "caves"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["herd", "herds"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["sled"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["island", "islands"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["skull", "skulls"],
+    "context": "----"
+  },
+  "": {
+    "keys": ["cave paintings", "cave painting"],
+    "context": "----"
+  },
+  "SPACE ARTICLE" : "BELOW==================",
+  "": {
+    "keys": ["planet", "planets"],
+    "context": "astronomy"
+  },
+  "": {
+    "keys": ["solar system"],
+    "context": "astronomy"
+  },
+  "": {
+    "keys": ["sun"],
+    "context": "stars"
+  },
+  "": {
+    "keys": ["earth"],
+    "context": "planets"
+  },
+  "": {
+    "keys": ["jupiter"],
+    "context": "planets"
+  },
+  "": {
+    "keys": ["star", "stars"],
+    "context": "stars"
+  },
+  "": {
+    "keys": ["uranus"],
+    "context": "planets"
+  },
+  "": {
+    "keys": ["neptune"],
+    "context": "planets"
+  },
+  "": {
+    "keys": ["moon"],
+    "context": "earth's moon"
+  },
+  "": {
+    "keys": ["venus"],
+    "context": "planets"
+  },
+  "": {
+    "keys": ["cloud", "clouds"],
+    "context": "clouds in sky"
+  },
+  "": {
+    "keys": ["spacecraft", "spacecrafts"],
+    "context": "astronomy"
+  },
+  "": {
+    "keys": ["telescope", "telescopes"],
+    "context": "astronomy"
+  },
+  "": {
+    "keys": ["voyager"],
+    "context": "voyager space probe"
+<<<<<<< HEAD
+  },
+
+  "ANCIENT EGYPT ARTICLE" : "BELOW==================",
+  "": {
+    "keys": ["pyramid", "pyramids", "great pyramid", "pyramids of giza"],
+    "context": "ancient egyptian architecture"
+  },
+  "": {
+    "keys": ["sphinx"],
+    "context": "ancient egyptian architecture"
+  },
+  "": {
+    "keys": ["king, pharaoh", "kings, pharaohs"],
+    "context": "ancient egypt"
+  },
+  "": {
+    "keys": ["temple"],
+    "context": "ancient egyptian architecture"
+  },
+  "": {
+    "keys": ["monument", "monuments"],
+    "context": "ancient egyptian architecture"
+  },
+  "": {
+    "keys": ["sirius"],
+    "context": "astronomy"
+  },
+  "": {
+    "keys": ["napolean 1"],
+    "context": "french ruler"
+  },
+  "": {
+    "keys": ["tutankhamun"],
+    "context": "egyptian pharaoh"
+  },
+  "": {
+    "keys": ["horus"],
+    "context": "egyptian god"
   }
+
+=======
+  }
+>>>>>>> e78a5bf10ea07d9f6feb26821a698a93ff5fccca
 }
-
-

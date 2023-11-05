@@ -1,0 +1,77 @@
+/* importing the fonts */
+@font-face {
+    font-family: iowanFont;
+    src: url('./2131-font.otf');
+}
+
+/* Britannica css */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+.noun-popup-wrapper {
+    position: relative;
+    display: inline-block;
+    background-color: rgb(223, 196, 226);
+}
+.noun-popup-wrapper .noun-popup {
+    display: none;
+}
+.noun-popup-button {
+    display: none;
+}
+.noun-popup-wrapper .noun-popup::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #aeaeae transparent transparent transparent;
+}
+.noun-popup-wrapper .noun-popup:hover::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #c8c8c8 transparent transparent transparent;
+    transition: all 0.25s ease-in-out;
+}
+.noun-popup-wrapper:hover .noun-popup {
+    display: block;
+    -webkit-animation: fadeIn 0.5s;
+}
+.noun-popup-wrapper:hover .noun-popup-button {
+    display: block;
+    width: 160px;
+    background-color: #aeaeae;
+    color: #fff;
+    text-align: center;
+    font-family: iowanFont;
+    font-weight: 600;
+    border-radius: 6px;
+    border: none;
+    padding: 8px 0;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -80px;
+    -webkit-animation: fadeIn 0.5s;
+}
+.noun-popup-wrapper:hover .noun-popup-button:hover {
+    background-color: #c8c8c8;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+.fa-magnifying-glass {
+    color: #fff;
+}

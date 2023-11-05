@@ -1,102 +1,16 @@
-@font-face {
-    font-family: iowanFont;
-    src: url('./2131-font.otf');
-}
+
 
 /* Reset default browser styles */
 *, *::after, *::before {
     box-sizing: border-box;
-    border: none;
-    outline: none;
-}
+  }
 
+/* Set a default font family and size */
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
+    font-family: Arial, sans-serif;
     font-size: 16px;
-    background-image: url('./Before.jpeg');
-    background-size: cover;
+    background-color: purple;
 }
-
-.modal, .modal-body, .modal-content, .model-box{
-    background-color: transparent !important;
-}
-
-.model-box {
-    position: relative;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    margin: auto; 
-    height: 500px;
-    width: 500px;
-    border: 4px dashed grey;
-    z-index: 0;
-}
-
-@keyframes growView {
-    0% {
-        width: 0px;
-        height: 0px;
-    }
-    80% {
-        width: 550px;
-        height: 550px;
-    }
-    100% {
-        width: 500px;
-        height: 500px;
-    }
-}
-
-@keyframes fadeView {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-model-viewer {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    right: 50%;
-    transform: translateX(50%);
-    animation: 1s ease-in-out 0s 1 fadeView forwards;
-    background-color: transparent;
-}
-
-.hidden {
-    display: none;
-}
-
-.qr-button {
-    background-color: white;
-    border-radius: 10px;
-    font-family: 'Verdana';
-    font-weight: bold;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    bottom: -40px;
-    right: -40px;
-    margin: 10px;
-    z-index: 2;
-}
-
-.qr-button:hover {
-    cursor: pointer;
-    background-color: rgb(215, 255, 255);
-}
-
-
-/* POPUP GENERAL STYLES */
-
 
 button{
     cursor: pointer;
@@ -135,7 +49,7 @@ button{
 .modal {
     display: none;
     opacity: 0;
-    color: white;
+    color: rgb(212, 199, 199);
     z-index: 10;
     position: fixed;
     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -143,20 +57,18 @@ button{
         -ms-animation: fadein 2s; /* Internet Explorer */
          -o-animation: fadein 2s; /* Opera < 12.1 */
             animation: fadein 2s;
-    font-family: iowanFont;
     
 }
 
  .modal-content {
     transform: translate(-50%, -50%);
-    border: none;
     position: fixed;
     left: 50%;
     top: 50%;
     width: 100vw;
     max-width: 80%;
-    z-index: 10;    
-    font-size: 3rem;
+    z-index: 10;
+    
 }  
 
 .modal.active {
@@ -172,8 +84,9 @@ button{
     align-items: center;
 }
 
-.modal-header .head{
-    font-size: 5rem;
+.modal-header .title{
+    font-size: 3rem;
+    font-weight: bold;
 }
 
 .close-button{
@@ -189,29 +102,25 @@ button{
     z-index: 10;
     padding: 10px 25px;
     position: fixed;
+    
 }
 
 .modal-body {
-    padding: 10px 5px 20px; 
+    padding: 10px 20px; 
     display: flex;
     justify-content: space-between;
     align-items: center;
-} 
-
- .model-box {
-    width: 100%;
-
+    
 } 
 
 #overlay {
-    z-index: 5;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     opacity: 0;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.5);
     transition: 300ms ease-in-out;
     backdrop-filter: blur(2px); 
     pointer-events: none;
