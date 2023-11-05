@@ -138,7 +138,7 @@ function injectButton( allKeys ) {
             // getting the index of the end of the sentence
             const sentenceEnd = Math.min(nextPeriod, nextExclamation, nextQuestion) + 1;
             // console.log("next period: " + sentenceEnd);
-
+            
             // getting the sentence the current noun is in
             const nounSentence = nounParentContent.substring(sentenceStart, sentenceEnd);
             console.log("sentence: " + nounSentence);

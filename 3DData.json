@@ -11,7 +11,6 @@
     "keys": ["arctic fox", "fox"],
     "context": "arctic animals"
   },
-  "WOOLLY MAMMOTH ARTICLE" : "BELOW==================",
   "": {
     "keys": ["elephant", "elephants"],
     "context": "zoo animals"
@@ -136,6 +135,7 @@
   "": {
     "keys": ["voyager"],
     "context": "voyager space probe"
+<<<<<<< HEAD
   },
 
   "ANCIENT EGYPT ARTICLE" : "BELOW==================",
@@ -176,4 +176,7 @@
     "context": "egyptian god"
   }
 
+=======
+  }
+>>>>>>> e78a5bf10ea07d9f6feb26821a698a93ff5fccca
 }

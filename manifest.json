@@ -15,19 +15,19 @@
                 "<all_urls>"
             ],
             "js": [
-                "script.js"
+                "extension/script.js"
             ],
             "css": [
-                "style.css"
+                "extension/style.css"
             ]
         }
     ],
     "web_accessible_resources": [
         {
             "resources": [
-                "index.html",
-                "style.css",
-                "script.js",
+                "extension/index.html",
+                "extension/style.css",
+                "extension/script.js",
                 "3DData.json"
             ],
             "matches": [
