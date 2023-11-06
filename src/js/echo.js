@@ -51,7 +51,7 @@ function getApiKey() {
 
 // get sec_key
 function getSecKey() {
-    return 'HRfrzxGipSPVLSGLkfqIaywm';
+    return '';
 }
 
 
